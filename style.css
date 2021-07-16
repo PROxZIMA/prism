@@ -81,7 +81,7 @@ html,body{
 }
 
 .engine {
-    height: calc(100% - 17px);
+    height: calc(100% - 14px);
     cursor: pointer;
 }
 
