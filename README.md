@@ -18,3 +18,7 @@ Extra Features:
 3) Responsive
 4) Some hover drop shadows
 
+
+TODO:
+
+1) User settings for editing links
