@@ -1,0 +1,244 @@
+:root {
+    --body-background: #11131C;
+    --box-background: #1A1D29;
+    --query-hover: #282D3D;
+    --visible-text-color: #8F9191;
+    --separator: #0C0E17;
+
+    --logo-color: #7C5CFF;
+    --button-color: #63B8FF;
+
+    --red-color: #FF492F;
+    --green-color: #00CF35;
+    --yellow-color: #FF8A00;
+    --blue-color: #00B8FF;
+    --pink-color: #FF62CE;
+
+    --search-height: 56px;
+
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --body-background: #F4F2F7;
+        --box-background: #FFFFFF;
+        --query-hover: #F6F5F7;
+        --visible-text-color: #27242C;
+        --separator: #B5B6B9;
+    }
+}
+
+
+html,body{
+    background: var(--body-background);
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px 0 45px 0;
+}
+
+.logo{
+    padding: 15px;
+    margin-bottom: 45px;
+    transition: 0.2s;
+}
+
+.logo:hover{
+    filter: drop-shadow(0 0 4px var(--logo-color));
+}
+
+.searchBox {
+    background: var(--box-background);
+    width: 80vw;
+    max-width: min-content;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.145) 0px 4px 8px, rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: var(--search-height);
+}
+
+.search {
+    height: inherit;
+    display: flex;
+}
+
+.engineDiv {
+    height: inherit;
+    width: var(--search-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.engine {
+    height: calc(100% - 17px);
+    cursor: pointer;
+}
+
+#inputBox{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 15px;
+    width: calc(80vw - (30px + 2 * var(--search-height)));
+    max-width: 410px;
+    color: var(--visible-text-color);
+    font-size: 22px;
+    height: inherit;
+}
+
+.autocomplete {
+    position: relative;
+    height: inherit;
+}
+
+.autocomplete-items {
+    position: absolute;
+    width: 80vw;
+    background: var(--box-background);
+    max-width: calc(440px + 2 * var(--search-height));
+    border-radius: 0 0 8px 8px;
+    box-shadow: rgba(0, 0, 0, 0.145) 0px 4px 8px, rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 99;
+    top: 90%;
+    left: calc(0px - var(--search-height));
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: var(--visible-text-color);
+    position: relative;
+    height: 25px;
+}
+
+.autocomplete-items div:before {
+    content: "";
+    position: absolute;
+    left: 3%;
+    bottom: 0;
+    height: 1px;
+    width: 94%;
+    border-bottom: 1px solid var(--separator);
+}
+
+.autocomplete-items div:hover {
+    background-color: var(--query-hover);
+}
+
+.autocomplete-items div:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.autocomplete-items div:last-child:before {
+    border: none;
+}
+
+.autocomplete-active {
+    background-color: var(--query-hover) !important;
+}
+
+.button{
+    background: none;
+    border: none;
+    transition: 0.2s;
+    height: inherit;
+}
+
+.button:hover{
+    filter: drop-shadow(0 0 4px var(--button-color));
+}
+
+.bmContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    align-items: center;
+    margin: 0 8px 60px 8px;
+}
+
+.icon{
+    margin: 15px;
+    transition: 0.2s;
+}
+
+.bookmarks{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.145) 0px 4px 8px, rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: var(--box-background);
+}
+
+li{
+    font-size: 16px;
+    list-style-type: none;
+    padding:5px
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: var(--visible-text-color);
+}
+
+/* 1st category */
+.category > .icon.code:hover {
+    filter: drop-shadow(0 0 4px var(--green-color));
+}
+.category > .bookmarks.code > li a:hover {
+    color: var(--green-color);
+}
+
+/* 2nd category */
+.category > .icon.docs:hover {
+    filter: drop-shadow(0 0 4px var(--yellow-color));
+}
+.category > .bookmarks.docs > li a:hover {
+    color: var(--yellow-color);
+}
+
+/* 3rd category */
+.category > .icon.ent:hover {
+    filter: drop-shadow(0 0 4px var(--red-color));
+}
+.category > .bookmarks.ent > li a:hover {
+    color: var(--red-color);
+}
+
+/* 4th category */
+.category > .icon.music:hover {
+    filter: drop-shadow(0 0 4px var(--blue-color));
+}
+.category > .bookmarks.music > li a:hover {
+    color: var(--blue-color);
+}
+
+/* 5th category */
+.category > .icon.art:hover {
+    filter: drop-shadow(0 0 4px var(--pink-color));
+}
+.category > .bookmarks.art > li a:hover {
+    color: var(--pink-color);
+}
+

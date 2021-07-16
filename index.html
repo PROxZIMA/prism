@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="icons/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="logo"><img src="icons/fox.svg"/></div>
+            <div class="searchBox">
+                <form autocomplete="off" class="search" action="https://www.google.com/search" method="get">
+                    <div class="engineDiv">
+                        <img class="engine" id="engineLogo" src="icons/google.svg" onclick="toggleEngine()"/>
+                    </div>
+                    <div class="autocomplete">
+                        <input id="inputBox" type="text" name="q" placeholder="Search with Google"/>
+                    </div>
+                    <input class="button" src="icons/search.svg" name="submit" type="image"/>
+                </form>
+            </div>
+        </div>
+
+        <div class="bmContainer">
+            <div class="category">
+                <div class="icon code"><img src="icons/code.svg"/></div>
+                <div class="bookmarks code">
+                    <li><a href="https://www.hackerrank.com/">Hackerrank</a></li>
+                    <li><a href="https://www.codechef.com/">CodeChef</a></li>
+                    <li><a href="https://leetcode.com/">LeetCode</a></li>
+                    <li><a href="https://www.hackerearth.com/">HackerEarth</a></li>
+                    <li><a href="https://codeforces.com/">CodeForces</a></li>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="icon docs"><img src="icons/docs.svg"/></div>
+                <div class="bookmarks docs">
+                    <li><a href="https://docs.python.org/3/library/index.html">Python</a></li>
+                    <li><a href="https://www.cplusplus.com/doc/tutorial/">C++</a></li>
+                    <li><a href="https://github.com/">Github</a></li>
+                    <li><a href="https://devdocs.io/css/">DevDocs</a></li>
+                    <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="icon ent"><img src="icons/entertainment.svg"/></div>
+                <div class="bookmarks ent">
+                    <li><a href="https://www.youtube.com/">Youtube</a></li>
+                    <li><a href="https://drive.google.com/drive/u/0/">Drive</a></li>
+                    <li><a href="https://mail.google.com/mail/u/0/">Gmail</a></li>
+                    <li><a href="https://photos.google.com/">Photos</a></li>
+                    <li><a href="https://www.reddit.com/">Reddit</a></li>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="icon music"><img src="icons/music.svg"/></div>
+                <div class="bookmarks music">
+                    <li><a href="https://open.spotify.com/">Spotify</a></li>
+                    <li><a href="https://soundcloud.com/">Soundcloud</a></li>
+                    <li><a href="https://www.deezer.com/us/">Deezer</a></li>
+                    <li><a href="https://www.mixcloud.com/">Mixcloud</a></li>
+                    <li><a href="https://coreradio.ru/">Core Radio</a></li>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="icon art"><img src="icons/art.svg"/></div>
+                <div class="bookmarks art">
+                    <li><a href="https://www.behance.net/">Behance</a></li>
+                    <li><a href="https://www.deviantart.com/">Deviantart</a></li>
+                    <li><a href="https://unsplash.com/">Unsplash</a></li>
+                    <li><a href="https://dribbble.com/">Dribbble</a></li>
+                    <li><a href="https://www.tumblr.com/dashboard">Tumblr</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src='main.js'></script>
+</body>
+</html>
