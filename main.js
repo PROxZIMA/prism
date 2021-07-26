@@ -3,7 +3,7 @@ window.onload = () => {
 
     let storedLogo = localStorage.getItem('preferredEngine');
     if (storedLogo === "null")
-        localStorage.setItem('preferredEngine', document.getElementById("engineLogo").src);
+        localStorage.setItem('preferredEngine', document.getElementById("engine").src);
     else
         toggleEngine(storedLogo);
 };
@@ -40,6 +40,7 @@ function autocomplete(inp, arr) {
             for (i = 0; i < arr.length; i++) {
                 if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
                     b = document.createElement("DIV");
+                    b.setAttribute("class", "autocomplete-item");
                     b.innerHTML = `<strong>${arr[i].substr(0, val.length)}</strong>${arr[i].substr(val.length)}<input type='hidden' value='${arr[i]}'>`;
                     b.addEventListener("click", function(e) {
                         inp.value = this.getElementsByTagName("input")[0].value;
@@ -114,16 +115,16 @@ function autocomplete(inp, arr) {
 autocomplete(document.getElementById("inputBox"), []);
 
 function toggleEngine(x) {
-    var logo = document.getElementById("engineLogo").src;
+    var logo = document.getElementById("engine").src;
 
     const setGoogle = () => {
-        document.getElementById("engineLogo").src = "icons/google.svg";
+        document.getElementById("engine").src = "icons/google.svg";
         document.getElementById("inputBox").placeholder = "Search with Google";
         document.getElementsByClassName("search")[0].action = "https://www.google.com/search";    
     };
 
     const setDDG = () => {
-        document.getElementById("engineLogo").src = "icons/duck.svg";
+        document.getElementById("engine").src = "icons/duck.svg";
         document.getElementById("inputBox").placeholder = "Search with Duck Duck Go";
         document.getElementsByClassName("search")[0].action = "https://duckduckgo.com/";
     };
@@ -134,5 +135,5 @@ function toggleEngine(x) {
     else if (logo.includes("duck.svg")) setGoogle();
     else setDDG();
 
-    localStorage.setItem('preferredEngine', document.getElementById("engineLogo").src);
+    localStorage.setItem('preferredEngine', document.getElementById("engine").src);
 }
