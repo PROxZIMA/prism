@@ -4,7 +4,7 @@
     <title>Home</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" type="image/png" href="icons/favicon.png"/>
+    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -13,11 +13,9 @@
             <div class="logo"><img src="icons/fox.svg"/></div>
             <div class="searchBox">
                 <form autocomplete="off" class="search" action="https://www.google.com/search" method="get">
-                    <div class="engineDiv">
-                        <img class="engine" id="engineLogo" src="icons/google.svg" onclick="toggleEngine()"/>
-                    </div>
+                    <img class="engine" id="engine" src="icons/google.svg" onclick="toggleEngine()"/>
                     <div class="autocomplete">
-                        <input id="inputBox" type="text" name="q" placeholder="Search with Google"/>
+                        <input id="inputBox" class="inputBox" type="text" name="q" placeholder="Search with Google"/>
                     </div>
                     <input class="button" src="icons/search.svg" name="submit" type="image"/>
                 </form>
