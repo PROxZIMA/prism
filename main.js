@@ -13,7 +13,7 @@ function autocomplete(inp, arr) {
     inp.addEventListener("input", function(e) {
         var a, b, i, val = this.value;
 
-        var url = "https://corsanywhere.herokuapp.com/http://www.google.com/complete/search?client=chrome&q=" + encodeURIComponent(val);
+        var url = "https://cors-anywhere.herokuapp.com/http://www.google.com/complete/search?client=chrome&q=" + encodeURIComponent(val);
         //+ "&callback=func";
 
         /*var req = new XMLHttpRequest();
