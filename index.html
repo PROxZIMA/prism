@@ -1,94 +1,98 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Home</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-	<meta name="author" content="Pratik Pingale">
-    <meta name="description" content="A minimalist, beautiful startpage forked from [Prismatic Night]">
+  <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta property="og:title" content="Home">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://proxzima.ml/prism/">
-	<meta property="og:description" content="A minimalist, beautiful startpage forked from [Prismatic Night](/3r3bu5x9/Prismatic-Night)">
-    <meta property="og:image" content="https://raw.githubusercontent.com/PROxZIMA/prism/master/assets/ogImage.png">
+  <meta name="author" content="Pratik Pingale">
+  <meta name="description" content="A minimalist, beautiful startpage forked from [Prismatic Night]">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg"/>
+  <meta property="og:title" content="Home">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://proxzima.ml/prism/">
+  <meta property="og:description"
+    content="A minimalist, beautiful startpage forked from [Prismatic Night](/3r3bu5x9/Prismatic-Night)">
+  <meta property="og:image" content="https://raw.githubusercontent.com/PROxZIMA/prism/master/assets/ogImage.png">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
 </head>
+
 <body>
-    <div class="container">
-        <div class="head">
-            <div class="logo"><img src="icons/fox.svg"/></div>
-            <div class="searchBox">
-                <form autocomplete="off" class="search" action="https://www.google.com/search" method="get">
-                    <img class="engine" id="engine" src="icons/google.svg" onclick="toggleEngine()"/>
-                    <div class="autocomplete">
-                        <input id="inputBox" class="inputBox" type="text" name="q" placeholder="Search with Google"/>
-                    </div>
-                    <input class="button" src="icons/search.svg" name="submit" type="image"/>
-                </form>
-            </div>
-        </div>
-
-        <div class="bmContainer">
-            <div class="category">
-                <div class="icon code"><img src="icons/code.svg"/></div>
-                <div class="bookmarks code">
-                    <li><a href="https://www.hackerrank.com/">Hackerrank</a></li>
-                    <li><a href="https://www.codechef.com/">CodeChef</a></li>
-                    <li><a href="https://leetcode.com/">LeetCode</a></li>
-                    <li><a href="https://www.hackerearth.com/">HackerEarth</a></li>
-                    <li><a href="https://codeforces.com/">CodeForces</a></li>
-                </div>
-            </div>
-
-            <div class="category">
-                <div class="icon docs"><img src="icons/docs.svg"/></div>
-                <div class="bookmarks docs">
-                    <li><a href="https://docs.python.org/3/library/index.html">Python</a></li>
-                    <li><a href="https://www.cplusplus.com/doc/tutorial/">C++</a></li>
-                    <li><a href="https://github.com/">Github</a></li>
-                    <li><a href="https://devdocs.io/css/">DevDocs</a></li>
-                    <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>
-                </div>
-            </div>
-
-            <div class="category">
-                <div class="icon ent"><img src="icons/entertainment.svg"/></div>
-                <div class="bookmarks ent">
-                    <li><a href="https://www.youtube.com/">Youtube</a></li>
-                    <li><a href="https://drive.google.com/drive/u/0/">Drive</a></li>
-                    <li><a href="https://mail.google.com/mail/u/0/">Gmail</a></li>
-                    <li><a href="https://photos.google.com/">Photos</a></li>
-                    <li><a href="https://www.reddit.com/">Reddit</a></li>
-                </div>
-            </div>
-
-            <div class="category">
-                <div class="icon music"><img src="icons/music.svg"/></div>
-                <div class="bookmarks music">
-                    <li><a href="https://open.spotify.com/">Spotify</a></li>
-                    <li><a href="https://soundcloud.com/">Soundcloud</a></li>
-                    <li><a href="https://www.deezer.com/us/">Deezer</a></li>
-                    <li><a href="https://www.mixcloud.com/">Mixcloud</a></li>
-                    <li><a href="https://coreradio.ru/">Core Radio</a></li>
-                </div>
-            </div>
-
-            <div class="category">
-                <div class="icon art"><img src="icons/art.svg"/></div>
-                <div class="bookmarks art">
-                    <li><a href="https://www.behance.net/">Behance</a></li>
-                    <li><a href="https://www.deviantart.com/">Deviantart</a></li>
-                    <li><a href="https://unsplash.com/">Unsplash</a></li>
-                    <li><a href="https://dribbble.com/">Dribbble</a></li>
-                    <li><a href="https://www.tumblr.com/dashboard">Tumblr</a></li>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="head">
+      <div class="logo"><img src="icons/fox.svg"/></div>
+      <div class="searchBox">
+        <form autocomplete="off" class="search" action="https://www.google.com/search" method="get">
+          <img class="engine" id="engine" src="icons/google.svg" onclick="toggleEngine()" />
+          <div class="autocomplete">
+            <input id="inputBox" class="inputBox" type="text" name="q" placeholder="Search with Google" />
+          </div>
+          <input class="button" src="icons/search.svg" name="submit" type="image" />
+        </form>
+      </div>
     </div>
-<script src='main.js'></script>
+
+    <div class="bmContainer">
+      <div class="category">
+        <div class="icon code"><img src="icons/code.svg"/></div>
+        <div class="bookmarks code">
+          <li><a href="https://www.hackerrank.com/">Hackerrank</a></li>
+          <li><a href="https://www.codechef.com/">CodeChef</a></li>
+          <li><a href="https://leetcode.com/">LeetCode</a></li>
+          <li><a href="https://www.hackerearth.com/">HackerEarth</a></li>
+          <li><a href="https://codeforces.com/">CodeForces</a></li>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="icon docs"><img src="icons/docs.svg"/></div>
+        <div class="bookmarks docs">
+          <li><a href="https://docs.python.org/3/library/index.html">Python</a></li>
+          <li><a href="https://www.cplusplus.com/doc/tutorial/">C++</a></li>
+          <li><a href="https://github.com/">Github</a></li>
+          <li><a href="https://devdocs.io/css/">DevDocs</a></li>
+          <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="icon ent"><img src="icons/entertainment.svg"/></div>
+        <div class="bookmarks ent">
+          <li><a href="https://www.youtube.com/">Youtube</a></li>
+          <li><a href="https://drive.google.com/drive/u/0/">Drive</a></li>
+          <li><a href="https://mail.google.com/mail/u/0/">Gmail</a></li>
+          <li><a href="https://photos.google.com/">Photos</a></li>
+          <li><a href="https://www.reddit.com/">Reddit</a></li>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="icon music"><img src="icons/music.svg"/></div>
+        <div class="bookmarks music">
+          <li><a href="https://open.spotify.com/">Spotify</a></li>
+          <li><a href="https://soundcloud.com/">Soundcloud</a></li>
+          <li><a href="https://www.deezer.com/us/">Deezer</a></li>
+          <li><a href="https://www.mixcloud.com/">Mixcloud</a></li>
+          <li><a href="https://coreradio.ru/">Core Radio</a></li>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="icon art"><img src="icons/art.svg"/></div>
+        <div class="bookmarks art">
+          <li><a href="https://www.behance.net/">Behance</a></li>
+          <li><a href="https://www.deviantart.com/">Deviantart</a></li>
+          <li><a href="https://unsplash.com/">Unsplash</a></li>
+          <li><a href="https://dribbble.com/">Dribbble</a></li>
+          <li><a href="https://www.tumblr.com/dashboard">Tumblr</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src='js/main.js'></script>
 </body>
+
 </html>
