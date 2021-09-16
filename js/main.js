@@ -8,22 +8,41 @@ window.onload = () => {
     toggleEngine(storedLogo);
 };
 
+
+const fetchData = (unique => url =>
+  new Promise(response => {
+    const script = document.createElement('script');
+    const name = `_${unique++}`;
+
+    script.src = `${url}&callback=${name}`;
+    window[name] = json => {
+      response(new Response(JSON.stringify(json)));
+      script.remove();
+      delete window[name];
+    };
+
+    document.body.appendChild(script);
+  })
+)(0);
+
+
 const autocomplete = (inp, arr) => {
   let currentFocus;
   inp.addEventListener("input", function (e) {
     let a, b, i, val = this.value;
 
-    let url = "https://cors.bridged.cc/http://www.google.com/complete/search?client=chrome&q=" + encodeURIComponent(val); //+ "&callback=func";
-
-    /*let req = new XMLHttpRequest();
-    req.open('GET', url, false);  // `false` makes the request synchronous
-    req.send();
-    arr = JSON.parse(req.responseText)[1];*/
+    let url = `https://www.google.com/complete/search?client=chrome&q=${encodeURIComponent(val)}`;
 
     const request = (async () => {
-      //const response = await fetch(url);
-      const data = await (await fetch(url)).text();
-      arr = JSON.parse(data)[1];
+      await (fetchData(url)
+        .then(function (response) {
+          return response.json()
+        }).then(function (json) {
+          arr = json[1];
+        }).catch(function (ex) {
+          console.log('parsing failed', ex)
+        })
+      );
 
       closeAllLists();
       if (!val) {
@@ -115,6 +134,7 @@ const autocomplete = (inp, arr) => {
 
 autocomplete(document.getElementById("inputBox"), []);
 
+
 const toggleEngine = (x) => {
   let logo = document.getElementById("engine").src;
 
@@ -138,3 +158,5 @@ const toggleEngine = (x) => {
 
   localStorage.setItem('preferredEngine', document.getElementById("engine").src);
 }
+
+document.getElementById('engine').addEventListener('click', () => toggleEngine());
