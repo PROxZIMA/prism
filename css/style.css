@@ -59,6 +59,8 @@ html, body{
   -webkit-box-direction: normal;
     -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
+  position: relative;
 }
 
 .head{
