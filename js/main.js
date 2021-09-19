@@ -2,8 +2,6 @@ var theme = 'dark';
 if (localStorage.getItem('theme'))
   if (localStorage.getItem('theme') === 'light')
     theme = 'light';
-  else if (window.matchMedia('(prefers-color-scheme: light)').matches)
-    theme = 'light';
 
 const themeApply = (th) => {
   t = document.getElementById("theme")
