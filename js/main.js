@@ -1,12 +1,24 @@
-window.onload = () => {
-  document.getElementById('inputBox').focus();
+var theme = 'dark';
+if (localStorage.getItem('theme'))
+  if (localStorage.getItem('theme') === 'light')
+    theme = 'light';
+  else if (window.matchMedia('(prefers-color-scheme: light)').matches)
+    theme = 'light';
 
-  let storedLogo = localStorage.getItem('preferredEngine');
-  if (storedLogo === "null")
-    localStorage.setItem('preferredEngine', document.getElementById("engine").src);
-  else
-    toggleEngine(storedLogo);
+const themeApply = (th) => {
+  t = document.getElementById("theme")
+  if (th === 'dark')
+    t.checked = true;
+
+  document.documentElement.setAttribute('data-theme', (theme === 'light') ? 'dark' : 'light');
+  localStorage.setItem('theme', theme);
 };
+themeApply(theme);
+
+document.getElementById('theme').addEventListener('click', () => {
+  theme = (theme === 'light') ? 'dark' : 'light';
+  themeApply();
+});
 
 
 const fetchData = (unique => url =>
@@ -50,10 +62,7 @@ const autocomplete = (inp, arr) => {
       }
 
       currentFocus = -1;
-      a = document.createElement("DIV");
-      a.setAttribute("id", this.id + "autocomplete-list");
-      a.setAttribute("class", "autocomplete-items");
-      this.parentNode.appendChild(a);
+      a = document.getElementById('autocomplete-items');
 
       for (i = 0; i < arr.length; i++) {
         if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
@@ -119,16 +128,14 @@ const autocomplete = (inp, arr) => {
   }
 
   const closeAllLists = (elmnt) => {
-    let x = document.getElementsByClassName("autocomplete-items");
-    for (let i = 0; i < x.length; i++) {
-      if (elmnt != x[i] && elmnt != inp) {
-        x[i].parentNode.removeChild(x[i]);
-      }
+    let x = document.getElementById("autocomplete-items");
+    while (x.firstChild) {
+      x.firstChild.remove()
     }
   }
 
-  document.addEventListener("click", function (e) {
-    closeAllLists(e.target);
+  document.addEventListener("click", e => {
+    closeAllLists();
   });
 }
 
@@ -151,12 +158,25 @@ const toggleEngine = (x) => {
   };
 
   if (x)
-    if (x.includes("duck.svg")) setDDG();
-    else setGoogle();
-  else if (logo.includes("duck.svg")) setGoogle();
-  else setDDG();
+    if (x.includes("duck.svg"))
+      setDDG();
+    else
+      setGoogle();
+  else if (logo.includes("duck.svg"))
+    setGoogle();
+  else
+    setDDG();
 
   localStorage.setItem('preferredEngine', document.getElementById("engine").src);
 }
 
 document.getElementById('engine').addEventListener('click', () => toggleEngine());
+
+document.getElementById('inputBox').focus();
+
+let storedLogo = localStorage.getItem('preferredEngine');
+if (storedLogo === "null")
+  localStorage.setItem('preferredEngine', document.getElementById("engine").src);
+else
+  toggleEngine(storedLogo);
+
