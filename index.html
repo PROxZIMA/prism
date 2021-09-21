@@ -1,124 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html data-theme='dark'>
 
 <head>
   <title>Home</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
-  <meta name="author" content="Pratik Pingale">
-  <meta name="description" content="A minimalist, beautiful startpage forked from [Prismatic Night]">
+  <meta name='author' content='Pratik Pingale'>
+  <meta name='description' content='A minimalist, beautiful startpage forked from [Prismatic Night]'>
 
-  <meta property="og:title" content="Home">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://proxzima.ml/prism/">
-  <meta property="og:description"
-    content="A minimalist, beautiful startpage forked from [Prismatic Night](/3r3bu5x9/Prismatic-Night)">
-  <meta property="og:image" content="https://raw.githubusercontent.com/PROxZIMA/prism/master/assets/ogImage.png">
+  <meta property='og:title' content='Home'>
+  <meta property='og:type' content='website'>
+  <meta property='og:url' content='https://proxzima.ml/prism/'>
+  <meta property='og:description'
+    content='A minimalist, beautiful startpage forked from [Prismatic Night](/3r3bu5x9/Prismatic-Night)'>
+  <meta property='og:image' content='https://raw.githubusercontent.com/PROxZIMA/prism/master/assets/ogImage.png'>
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+  <link rel='icon' type='image/svg+xml' href='icons/favicon.svg'/>
 </head>
 
 <body>
-  <div class="container">
-    <!-- https://codepen.io/bnthor/pen/WQBNxO -->
-    <div class="sidePane">
-      <div class="extend"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline">
-          <g>
-            <path fill="currentColor" class="primary"
-              d="M32.11 239l135.55-136a23.77 23.77 0 0 1 33.79 0L224 125.74a23.94 23.94 0 0 1 0 33.89L127.89 256l96 96.47a23.94 23.94 0 0 1 0 33.89L201.35 409a23.77 23.77 0 0 1-33.79 0L32 273a24 24 0 0 1 .11-34z"></path>
-            <path fill="currentColor" class="secondary"
-              d="M224 239l135.61-136a23.78 23.78 0 0 1 33.8 0L416 125.64a23.94 23.94 0 0 1 0 33.89l-96.16 96.37L416 352.27a23.94 23.94 0 0 1 0 33.89L393.53 409a23.78 23.78 0 0 1-33.8 0L224.12 273a23.94 23.94 0 0 1-.1-34z"></path>
-          </g>
-        </svg>
-      </div>
-      <div class="toggleWrapper">
-        <input type="checkbox" class="theme" id="theme" /><label for="theme" class="toggle">
-          <span class="toggle__handler">
-            <span class="crater crater--1"></span>
-            <span class="crater crater--2"></span>
-            <span class="crater crater--3"></span>
+  <div class='container'>
+    <div id='sidePane' class='sidePane'>
+      <div class='extend sideIcon'></div>
+      <div title='Edit' class='sideIcon' id='edit' tabindex='0'></div>
+      <div title='Save' class='sideIcon' id='save' tabindex='0'></div>
+      <label title='Import' class='sideIcon importWrap' tabindex='0'><input id='import' type='file' accept='.json'></label>
+      <div title='Export' class='sideIcon' id='export' tabindex='0'></div>
+      <div title='Restore' class='sideIcon' id='restore' tabindex='0'></div>
+
+      <!-- https://codepen.io/bnthor/pen/WQBNxO -->
+      <div id='toggleWrapper' class='toggleWrapper'>
+        <input type='checkbox' class='theme' id='theme' /><label for='theme' class='toggle'>
+          <span class='toggle__handler'>
+            <span class='crater crater--1'></span>
+            <span class='crater crater--2'></span>
+            <span class='crater crater--3'></span>
           </span>
-          <span class="star star--1"></span>
-          <span class="star star--2"></span>
-          <span class="star star--3"></span>
-          <span class="star star--4"></span>
-          <span class="star star--5"></span>
-          <span class="star star--6"></span>
+          <span class='star star--1'></span>
+          <span class='star star--2'></span>
+          <span class='star star--3'></span>
+          <span class='star star--4'></span>
+          <span class='star star--5'></span>
+          <span class='star star--6'></span>
         </label>
       </div>
     </div>
-    <div class="head">
-      <div class="logo"><img src="icons/fox.svg" /></div>
-      <div class="searchBox">
-        <form autocomplete="off" class="search" action="https://www.google.com/search" method="get">
-          <img class="engine" id="engine" src="icons/google.svg" />
-          <div class="autocomplete">
-            <input id="inputBox" class="inputBox" type="text" name="q" placeholder="Search with Google" />
-            <div id="autocomplete-items" class="autocomplete-items"></div>
+    <div class='head'>
+      <div class='logo'><img src='icons/fox.svg' /></div>
+      <div class='searchBox'>
+        <form autocomplete='off' class='search' action='https://www.google.com/search' method='get'>
+          <img class='engine' id='engine' src='icons/google.svg' />
+          <div class='autocomplete'>
+            <input id='inputBox' class='inputBox' type='text' name='q' placeholder='Search with Google' />
+            <div id='autocomplete-items' class='autocomplete-items'></div>
           </div>
-          <input class="button" src="icons/search.svg" name="submit" type="image" />
+          <input class='button' src='icons/search.svg' name='submit' type='image' />
         </form>
       </div>
     </div>
 
-    <div class="bmContainer">
-      <div class="category">
-        <div class="icon code"><img src="icons/code.svg" /></div>
-        <div class="bookmarks code">
-          <li><a href="https://www.hackerrank.com/">Hackerrank</a></li>
-          <li><a href="https://www.codechef.com/">CodeChef</a></li>
-          <li><a href="https://leetcode.com/">LeetCode</a></li>
-          <li><a href="https://www.hackerearth.com/">HackerEarth</a></li>
-          <li><a href="https://codeforces.com/">CodeForces</a></li>
+    <div class='bmContainer'>
+      <div class='category'>
+        <div class='icon code'><img src='icons/code.svg' /></div>
+        <div class='bookmarks code'>
+          <li><a class='link' href='https://www.hackerrank.com/'>Hackerrank</a></li>
+          <li><a class='link' href='https://www.codechef.com/'>CodeChef</a></li>
+          <li><a class='link' href='https://leetcode.com/'>LeetCode</a></li>
+          <li><a class='link' href='https://www.hackerearth.com/'>HackerEarth</a></li>
+          <li><a class='link' href='https://codeforces.com/'>CodeForces</a></li>
         </div>
       </div>
 
-      <div class="category">
-        <div class="icon docs"><img src="icons/docs.svg" /></div>
-        <div class="bookmarks docs">
-          <li><a href="https://docs.python.org/3/library/index.html">Python</a></li>
-          <li><a href="https://www.cplusplus.com/doc/tutorial/">C++</a></li>
-          <li><a href="https://github.com/">Github</a></li>
-          <li><a href="https://devdocs.io/css/">DevDocs</a></li>
-          <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>
+      <div class='category'>
+        <div class='icon docs'><img src='icons/docs.svg' /></div>
+        <div class='bookmarks docs'>
+          <li><a class='link' href='https://docs.python.org/3/library/index.html'>Python</a></li>
+          <li><a class='link' href='https://www.cplusplus.com/doc/tutorial/'>C++</a></li>
+          <li><a class='link' href='https://github.com/'>Github</a></li>
+          <li><a class='link' href='https://devdocs.io/css/'>DevDocs</a></li>
+          <li><a class='link' href='https://stackoverflow.com/'>Stackoverflow</a></li>
         </div>
       </div>
 
-      <div class="category">
-        <div class="icon ent"><img src="icons/entertainment.svg" /></div>
-        <div class="bookmarks ent">
-          <li><a href="https://www.youtube.com/">Youtube</a></li>
-          <li><a href="https://drive.google.com/drive/u/0/">Drive</a></li>
-          <li><a href="https://mail.google.com/mail/u/0/">Gmail</a></li>
-          <li><a href="https://photos.google.com/">Photos</a></li>
-          <li><a href="https://www.reddit.com/">Reddit</a></li>
+      <div class='category'>
+        <div class='icon ent'><img src='icons/entertainment.svg' /></div>
+        <div class='bookmarks ent'>
+          <li><a class='link' href='https://www.youtube.com/'>Youtube</a></li>
+          <li><a class='link' href='https://drive.google.com/drive/u/0/'>Drive</a></li>
+          <li><a class='link' href='https://mail.google.com/mail/u/0/'>Gmail</a></li>
+          <li><a class='link' href='https://photos.google.com/'>Photos</a></li>
+          <li><a class='link' href='https://www.reddit.com/'>Reddit</a></li>
         </div>
       </div>
 
-      <div class="category">
-        <div class="icon music"><img src="icons/music.svg" /></div>
-        <div class="bookmarks music">
-          <li><a href="https://open.spotify.com/">Spotify</a></li>
-          <li><a href="https://soundcloud.com/">Soundcloud</a></li>
-          <li><a href="https://www.deezer.com/us/">Deezer</a></li>
-          <li><a href="https://www.mixcloud.com/">Mixcloud</a></li>
-          <li><a href="https://coreradio.ru/">Core Radio</a></li>
+      <div class='category'>
+        <div class='icon music'><img src='icons/music.svg' /></div>
+        <div class='bookmarks music'>
+          <li><a class='link' href='https://open.spotify.com/'>Spotify</a></li>
+          <li><a class='link' href='https://soundcloud.com/'>Soundcloud</a></li>
+          <li><a class='link' href='https://www.deezer.com/us/'>Deezer</a></li>
+          <li><a class='link' href='https://www.mixcloud.com/'>Mixcloud</a></li>
+          <li><a class='link' href='https://coreradio.ru/'>Core Radio</a></li>
         </div>
       </div>
 
-      <div class="category">
-        <div class="icon art"><img src="icons/art.svg" /></div>
-        <div class="bookmarks art">
-          <li><a href="https://www.behance.net/">Behance</a></li>
-          <li><a href="https://www.deviantart.com/">Deviantart</a></li>
-          <li><a href="https://unsplash.com/">Unsplash</a></li>
-          <li><a href="https://dribbble.com/">Dribbble</a></li>
-          <li><a href="https://www.tumblr.com/dashboard">Tumblr</a></li>
+      <div class='category'>
+        <div class='icon art'><img src='icons/art.svg' /></div>
+        <div class='bookmarks art'>
+          <li><a class='link' href='https://www.behance.net/'>Behance</a></li>
+          <li><a class='link' href='https://www.deviantart.com/'>Deviantart</a></li>
+          <li><a class='link' href='https://unsplash.com/'>Unsplash</a></li>
+          <li><a class='link' href='https://dribbble.com/'>Dribbble</a></li>
+          <li><a class='link' href='https://www.tumblr.com/dashboard'>Tumblr</a></li>
         </div>
       </div>
     </div>
+    <div id="toastsContainer" class="toastsContainer"></div>
   </div>
   <script src='js/main.js'></script>
 </body>
