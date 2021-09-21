@@ -32,6 +32,8 @@ A minimalist, beautiful startpage forked from [Prismatic Night](https://github.c
 
 - [x] Import/Export/Restore links
 
-- [ ] Add more links to a Container
+- [ ] Option to add more links to a Container
 
-- [ ] Add more Container
+- [ ] Option to add more Containers
+
+- [ ] Time widget
