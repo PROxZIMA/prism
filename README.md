@@ -36,4 +36,6 @@ A minimalist, beautiful startpage forked from [Prismatic Night](https://github.c
 
 - [ ] Option to add more Containers
 
-- [ ] Time widget
+- [ ] Time/Weather widget
+
+- [ ] Full user controls to edit padding/colors/radius/....
