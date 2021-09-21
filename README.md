@@ -11,14 +11,27 @@ A minimalist, beautiful startpage forked from [Prismatic Night](https://github.c
 <h3 align="center">Responsive</h3>
 <p align="center"><img src="./assets/android.png" width="350"></p>
 
-Extra Features:
+# Features
 
-1) Dark/Light theme (Switchs according to system theme)
-2) Google autocomplete suggestion
-3) Responsive
-4) Some hover drop shadows
+- [x] Dark/Light theme (Switch button in right pane)
 
+- [x] Google autocomplete suggestion
 
-TODO:
+- [x] Responsive
 
-1) User settings for editing links
+- [x] Some hover drop shadows
+
+- [x] Popups based on activities
+
+- [x] User settings for editing links
+
+  - Click `Edit` button to edit the links
+  - Links will be in edit mode now
+  - Press `Enter` in input box after editing link
+  - Click `Save` to save the links
+
+- [x] Import/Export/Restore links
+
+- [ ] Add more links to a Container
+
+- [ ] Add more Container
