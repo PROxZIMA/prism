@@ -302,50 +302,52 @@ a:focus{
   outline: 0;
 }
 
-
-/* 1st category */
-.icon.code:hover {
-  -webkit-filter: drop-shadow(0 0 4px var(--green-color));
-      filter: drop-shadow(0 0 4px var(--green-color));
+.code {
+  --category-color: var(--green-color);
+  --icon-url: url('../icons/code.svg');
+  --category-title: 'Coding';
 }
-.bookmarks.code > li a:hover {
-  color: var(--green-color);
+.docs {
+  --category-color: var(--yellow-color);
+  --icon-url: url('../icons/docs.svg');
+  --category-title: 'Documentation';
 }
-
-/* 2nd category */
-.icon.docs:hover {
-  -webkit-filter: drop-shadow(0 0 4px var(--yellow-color));
-      filter: drop-shadow(0 0 4px var(--yellow-color));
+.ent {
+  --category-color: var(--red-color);
+  --icon-url: url('../icons/entertainment.svg');
+  --category-title: 'Entertainment';
 }
-.bookmarks.docs > li a:hover {
-  color: var(--yellow-color);
+.music {
+  --category-color: var(--blue-color);
+  --icon-url: url('../icons/music.svg');
+  --category-title: 'Music';
 }
-
-/* 3rd category */
-.icon.ent:hover {
-  -webkit-filter: drop-shadow(0 0 4px var(--red-color));
-      filter: drop-shadow(0 0 4px var(--red-color));
-}
-.bookmarks.ent > li a:hover {
-  color: var(--red-color);
+.art {
+  --category-color: var(--pink-color);
+  --icon-url: url('../icons/art.svg');
+  --category-title: 'Art';
 }
 
-/* 4th category */
-.icon.music:hover {
-  -webkit-filter: drop-shadow(0 0 4px var(--blue-color));
-      filter: drop-shadow(0 0 4px var(--blue-color));
+.category .icon {
+  background: var(--icon-url) center center no-repeat;
+  height: 48px;
+  width: 100%;
+  color: var(--visible-text-color);
+  line-height: 48px;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  outline: 0;
 }
-.bookmarks.music > li a:hover {
-  color: var(--blue-color);
+.link[contenteditable="true"] {
+  text-decoration: underline;
 }
-
-/* 5th category */
-.icon.art:hover {
-  -webkit-filter: drop-shadow(0 0 4px var(--pink-color));
-      filter: drop-shadow(0 0 4px var(--pink-color));
+.category .icon:hover {
+  -webkit-filter: drop-shadow(0 0 4px var(--category-color));
+      filter: drop-shadow(0 0 4px var(--category-color));
 }
-.bookmarks.art > li a:hover {
-  color: var(--pink-color);
+.category .icon:hover, .category .bookmarks > li a:hover {
+  color: var(--category-color);
 }
 
 
