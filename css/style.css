@@ -399,6 +399,7 @@ a:hover, a:focus {
   overflow: hidden;
   transition: width .3s ease 0.2s;
   display: flex;
+  transform-origin: top right;
 }
 #sidePane > * {
   flex-shrink: 0;

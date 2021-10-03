@@ -320,6 +320,8 @@ loadLinks(false, false);
   })
 );
 
+window.onresize = () => (document.getElementById('sidePane').style.transform = `scale(${Math.max((0.25 * window.innerWidth / 342), 1)})`);
+
 document.getElementById('edit').addEventListener('click', () => {
   editLink(true);
   document.getElementById('sidePane').style.width = '342px';
