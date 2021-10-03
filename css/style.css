@@ -47,11 +47,16 @@ html {
   font-family: var(--ff);
   font-size: 62.5%;
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 *, ::before, ::after {
   -webkit-box-sizing: inherit;
       box-sizing: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body{
@@ -291,6 +296,7 @@ body{
   --category-title: 'Art';
 }
 .category .icon {
+  flex-shrink: 0;
   --ih: calc(var(--search-height) * 0.7);
   background: var(--icon-url) center center / var(--ih) var(--ih) no-repeat;
   height: var(--ih);
@@ -325,8 +331,9 @@ body{
   -webkit-box-direction: normal;
     -ms-flex-direction: column;
       flex-direction: column;
-  aspect-ratio: 1 / 1.2;
   width: 100%;
+  height: calc(100% * 1.2);
+  padding-block: 20px;
   min-height: 184px;
   border-radius: var(--border-radius);
   -webkit-box-shadow: rgba(0, 0, 0, 0.145) 0px 4px 8px, rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -335,7 +342,6 @@ body{
     -ms-flex-align: center;
       align-items: center;
   justify-content: space-around;
-  padding-block: 20px;
 }
 .bookmarks li {
   list-style-type: none;
