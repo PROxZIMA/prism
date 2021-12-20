@@ -32,7 +32,7 @@ const toast = (type, message) => {
  * Theming Section
  */
 
-let theme = () => document.documentElement.getAttribute('data-theme');
+let theme = document.documentElement.getAttribute('data-theme');
 
 const toogleTheme = (e) => {
   const setTheme = (th) => {
