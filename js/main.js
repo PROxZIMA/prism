@@ -32,7 +32,7 @@ const toast = (type, message) => {
  * Theming Section
  */
 
-let theme = document.documentElement.getAttribute('data-theme');
+let theme = () => document.documentElement.getAttribute('data-theme');
 
 const toogleTheme = (e) => {
   const setTheme = (th) => {
@@ -61,7 +61,7 @@ document.getElementById('theme').addEventListener('click', () => {
 
 var storedTheme = localStorage.getItem('theme');
 if (storedTheme === null)
-  localStorage.setItem('theme', theme);
+  localStorage.setItem('theme', 'dark');
 else
   toogleTheme(storedTheme);
 
