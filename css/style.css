@@ -29,7 +29,7 @@
 
 [data-theme="light"] {
   --body-background: #F4F2F7;
-  --box-background: #FFFFFF;
+  --box-background: #F4F2F7;
   --query-hover: #F6F5F7;
   --visible-text-color: #27242C;
   --separator: #B5B6B9;
@@ -300,7 +300,7 @@ body{
 }
 .category .icon {
   flex-shrink: 0;
-  --ih: calc(var(--search-height) * 0.7);
+  --ih: calc(var(--search-height) * 0.8);
   background: var(--icon-url) center center / var(--ih) var(--ih) no-repeat;
   height: var(--ih);
   line-height: var(--ih);
@@ -341,10 +341,15 @@ body{
   border-radius: var(--border-radius);
   -webkit-box-shadow: var(--box-shadow);
       box-shadow: var(--box-shadow);
+  transition: var(--transition-time) ease-in-out;
   -webkit-box-align: center;
     -ms-flex-align: center;
       align-items: center;
   justify-content: space-around;
+}
+.bookmarks:hover {
+  box-shadow: rgba(0, 0, 0, 0.145) 0px 10px 10px, rgba(0, 0, 0, 0.24) 0px 8px 10px;
+  transform: translateY(-0.2rem);
 }
 .bookmarks li {
   list-style-type: none;
