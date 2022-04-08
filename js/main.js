@@ -34,8 +34,8 @@ const toast = (type, message) => {
 
 let theme = () => document.documentElement.getAttribute('data-theme');
 
-const toogleTheme = (e) => {
-  const setTheme = (th) => {
+const toogleTheme = e => {
+  const setTheme = th => {
     document.getElementById('theme').checked = (th === 'light') ? true : false;
     document.getElementById('toggleWrapper').title = `Switch to ${(th === 'light') ? 'dark' : 'light'} theme`;
     document.documentElement.setAttribute('data-theme', th);
@@ -88,23 +88,17 @@ const fetchData = (unique => url =>
   })
 )(0);
 
-const autocomplete = (inp, arr) => {
+const autocomplete = inp => {
   let currentFocus;
   inp.addEventListener('input', function (e) {
     let a, b, i, val = this.value;
 
     let url = `https://www.google.com/complete/search?client=chrome&q=${encodeURIComponent(val)}`;
 
-    const request = (async () => {
-      await (fetchData(url)
-        .then(function (response) {
-          return response.json()
-        }).then(function (json) {
-          arr = json[1];
-        }).catch(function (ex) {
-          console.log('parsing failed', ex)
-        })
-      );
+    fetchData(url)
+    .then(response => response.json())
+    .then(json => {
+      arr = json[1];
 
       closeAllLists();
       if (!val) {
@@ -127,7 +121,8 @@ const autocomplete = (inp, arr) => {
           a.appendChild(b);
         }
       }
-    })();
+    })
+    .catch(ex => console.log('parsing failed', ex));
   });
 
   inp.addEventListener('click', function (e) {
@@ -138,8 +133,12 @@ const autocomplete = (inp, arr) => {
   });
 
   inp.addEventListener('keydown', function (e) {
-    let x = document.getElementById(this.id + 'autocomplete-list');
+    let x = document.getElementById('autocomplete-items');
+
+    if (x.children.length == 0) return;
+
     if (x) x = x.getElementsByTagName('div');
+
     if (e.keyCode == 40) {
       currentFocus++;
       addActive(x);
@@ -163,7 +162,7 @@ const autocomplete = (inp, arr) => {
     }
   });
 
-  const addActive = (x) => {
+  const addActive = x => {
     if (!x) return false;
     removeActive(x);
     if (currentFocus >= x.length) currentFocus = 0;
@@ -171,13 +170,13 @@ const autocomplete = (inp, arr) => {
     x[currentFocus].classList.add('autocomplete-active');
   }
 
-  const removeActive = (x) => {
+  const removeActive = x => {
     for (let i = 0; i < x.length; i++) {
       x[i].classList.remove('autocomplete-active');
     }
   }
 
-  const closeAllLists = (elmnt) => {
+  const closeAllLists = elmnt => {
     let x = document.getElementById('autocomplete-items');
     while (x.firstChild) {
       x.firstChild.remove()
@@ -189,7 +188,7 @@ const autocomplete = (inp, arr) => {
   });
 }
 
-autocomplete(document.getElementById('inputBox'), []);
+autocomplete(document.getElementById('inputBox'));
 
 
 
@@ -200,7 +199,7 @@ autocomplete(document.getElementById('inputBox'), []);
 
 let logo = document.getElementById('engine');
 
-const toggleEngine = (e) => {
+const toggleEngine = e => {
   const setGoogle = () => {
     logo.src = 'icons/google.svg';
     document.getElementById('inputBox').placeholder = 'Search with Google';
@@ -256,7 +255,7 @@ const saveLinks = () => {
 if (localStorage.getItem('linkList') === null)
   saveLinks();
 
-const editLink = (state) => {
+const editLink = state => {
   [...links].forEach(link => link.contentEditable = state);
   toast('success', `Edit mode ${(state) ? 'ON' : 'OFF'}!!`);
 };
@@ -300,8 +299,8 @@ const loadLinks = (data, tost = true) => {
 };
 loadLinks(false, false);
 
-[...links].forEach((link) =>
-  link.addEventListener('click', function () {
+[...links].forEach(link =>
+  link.addEventListener('click', () => {
     if (
       link.contentEditable === 'true' &&
       !link.nextSibling
@@ -336,10 +335,10 @@ document.getElementById('save').addEventListener('click', () => {
   cleanInp();
 });
 
-document.getElementById('import').addEventListener('change', (e) => {
+document.getElementById('import').addEventListener('change', e => {
   var reader = new FileReader();
   reader.readAsText(e.target.files[0], 'UTF-8');
-  reader.onload = function (e) {
+  reader.onload = e => {
     if (loadLinks(e.target.result, false))
       toast('success', 'Links imported!!');
   }
@@ -361,7 +360,7 @@ document.getElementById('restore').addEventListener('click', () => {
   toast('success', 'Links restored!!');
 });
 
-document.addEventListener('click', (e) => {
+document.addEventListener('click', e => {
   if (
     e.target === document ||
     e.target.tagName === 'BODY' ||
