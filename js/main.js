@@ -61,7 +61,7 @@ document.getElementById('theme').addEventListener('click', () => {
 
 var storedTheme = localStorage.getItem('theme');
 if (storedTheme === null)
-  localStorage.setItem('theme', theme);
+  localStorage.setItem('theme', 'dark');
 else
   toogleTheme(storedTheme);
 
@@ -320,9 +320,11 @@ loadLinks(false, false);
   })
 );
 
+window.onresize = () => (document.getElementById('sidePane').style.transform = `scale(${Math.max((0.25 * window.innerWidth / 342), 1)})`);
+
 document.getElementById('edit').addEventListener('click', () => {
   editLink(true);
-  document.getElementById('sidePane').style.right = 0;
+  document.getElementById('sidePane').style.width = '342px';
 });
 
 document.getElementById('save').addEventListener('click', () => {
